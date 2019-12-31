@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [ {
+      "name": "TestvNet05",
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2018-08-01",
+      "location": "[resourceGroup().location]",
+      "tags": {
+          "displayName": "TestvNet05"
+      },
+      "properties": {
+          "addressSpace": {
+              "addressPrefixes": [
+                  "10.50.0.0/16"
+              ]
+          },
+          "subnets": [
+              {
+                  "name": "Subnet-1",
+                  "properties": {
+                      "addressPrefix": "10.50.10.0/24"
+                  }
+              },
+              {
+                  "name": "Subnet-2",
+                  "properties": {
+                      "addressPrefix": "10.50.11.0/24"
+                  }
+              }
+          ]
+      }
+  }
+  ]
+}
